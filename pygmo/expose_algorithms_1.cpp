@@ -220,12 +220,12 @@ void expose_algorithms_1(py::module &m, py::class_<pagmo::algorithm> &algo, py::
     moead_gen_.def(py::init<unsigned, std::string, std::string, unsigned, double, double, double, double, unsigned, bool>(),
                py::arg("gen") = 1u, py::arg("weight_generation") = "grid", py::arg("decomposition") = "tchebycheff",
                py::arg("neighbours") = 20u, py::arg("CR") = 1., py::arg("F") = 0.5, py::arg("eta_m") = 20,
-               py::arg("realb") = 0.9, py::arg("limit") = 2u, py::arg("preserve_diversity") = true);
+               py::arg("realb") = 0.9, py::arg("limit") = 2u, py::arg("preserve_diversity") = true, py::arg("outfile") = "");
     moead_gen_.def(py::init<unsigned, std::string, std::string, unsigned, double, double, double, double, unsigned, bool,
                         unsigned>(),
                py::arg("gen") = 1u, py::arg("weight_generation") = "grid", py::arg("decomposition") = "tchebycheff",
                py::arg("neighbours") = 20u, py::arg("CR") = 1., py::arg("F") = 0.5, py::arg("eta_m") = 20,
-               py::arg("realb") = 0.9, py::arg("limit") = 2u, py::arg("preserve_diversity") = true, py::arg("seed"));
+               py::arg("realb") = 0.9, py::arg("limit") = 2u, py::arg("preserve_diversity") = true, py::arg("seed"), py::arg("outfile") = "");
     // moead_gen needs an ad hoc exposition for the log as one entry is a vector (ideal_point)
     moead_gen_.def(
         "get_log",
