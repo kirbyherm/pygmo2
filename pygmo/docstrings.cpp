@@ -2811,7 +2811,7 @@ Raises:
 
 std::string moead_gen_docstring()
 {
-    return R"(__init__(gen = 1, weight_generation = "grid", decomposition = "tchebycheff", neighbours = 20, CR = 1, F = 0.5, eta_m = 20, realb = 0.9, limit = 2, preserve_diversity = true, seed = random)
+    return R"(__init__(gen = 1, weight_generation = "grid", decomposition = "tchebycheff", neighbours = 20, CR = 1, F = 0.5, eta_m = 20, realb = 0.9, limit = 2, preserve_diversity = true, seed = random, outfile="")
 
 Multi Objective Evolutionary Algorithms by Decomposition (the DE variant)
 
@@ -2827,6 +2827,7 @@ Args:
     limit (:class:`int`):  maximum number of copies reinserted in the population  (only if m_preserve_diversity is true)
     preserve_diversity (:class:`bool`): when true activates diversity preservation mechanisms
     seed (:class:`int`): seed used by the internal random number generator (default is random)
+    outfile (:class:`str`): output of generational population
 
 Raises:
     OverflowError: if *gen*, *neighbours*, *seed* or *limit* are negative or greater than an implementation-defined value
